@@ -1,0 +1,57 @@
+section{
+    position: absolute;
+    top: 140px;
+    width: 75%;
+    left: 20%;
+    display: inline-block;
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.8);
+}
+
+section h2{
+    float: top;
+    margin: 2%;
+}
+
+section p{
+    float: left;
+    margin-left: 4%;
+}
+
+table{
+    float: left;
+    margin: 4%;
+    border-collapse: collapse;
+    width: 80%;
+    color: black;
+}
+
+th{
+    height: 30px;
+    text-align: left;
+    font-weight: bold;
+    
+}
+td{
+    height: 30px;
+    vertical-align: bottom; 
+}
+
+th, td{
+    padding: 10px;
+    text-align: left;
+    width: 100px;
+    border-bottom: 1px solid;
+}
+
+
+div.htitle3 a.logout{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.empty{
+    margin: 3%;
+}
+
