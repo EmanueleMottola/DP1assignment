@@ -63,19 +63,19 @@ if($ok == true){
         if($login == 1){ // wrong password
             echo "wrong password, try again";
             close_db();
-            header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/login.php?success=wrongusrorpwd');
+            header('Location: ../front/view/login.php?success=wrongusrorpwd');
         }
         else if($login == 2){ //user not registered
             echo "user not registered<br>";
             close_db();
-            header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/login.php?success=wrongusrorpwd');
+            header('Location: ../front/view/login.php?success=wrongusrorpwd');
         }
         else{
             begin_session($username);
             echo $_SESSION['username'];
             echo "Ho login l'utente<br>";
             close_db();
-            header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/user.php');
+            header('Location: ../front/view/user.php');
         }
         
     }
@@ -84,7 +84,7 @@ if($ok == true){
         if($registration == 1){ //error accessing db or inserting or looging in
             echo "username already there";
             close_db();
-            header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/signup.php?success=wrongpwd');
+            header('Location: ../front/view/signup.php?success=wrongpwd');
         }
         else if($registration == 2){ //log in
             $action = "Login";
@@ -95,7 +95,7 @@ if($ok == true){
                 );
             $query = http_build_query($query);
             close_db();
-            header('Location: http://'.$_SERVER['HTTP_HOST']."/assignment/front/view/signup.php?$query");
+            header('Location: ../front/view/signup.php?$query');
         }
         else{ //registered
             begin_session($username);
@@ -104,7 +104,7 @@ if($ok == true){
             echo $_SESSION['username'];
             echo "Ho registrato l'utente<br>";
             close_db();
-            header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/user.php?msg=signup');
+            header('Location: ../front/view/user.php?msg=signup');
         }
     }    
 }
@@ -112,17 +112,17 @@ else{ // se fa logout da riveere questa parte
     if($action === "Login"){
         session_destroy();
         close_db();
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/login.php');
+        header('Location: login.php');
     }
     else if($action === "Sign up"){
         session_destroy();
         close_db();
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/front/view/signup.php'); 
+        header('Location: signup.php'); 
     }
     else{
         session_destroy();
         close_db();
-        header('Location: http://'.$_SERVER['HTTP_HOST'].'/assignment/index.php'); 
+        header('Location: ../index.php'); 
     }
 }
 

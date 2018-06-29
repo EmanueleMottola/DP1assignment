@@ -282,7 +282,7 @@ function perform_check_insert($departure_san, $arrival_san, $persons){
         $res = mysqli_query($conn, "INSERT INTO location VALUES('$departure_san', '$arrival_san', 0, 0);");
         if($res == false)
             return 0;
-        $res = mysqli_query($conn, "INSERT INTO location VALUES('$arrival_san', 'NULL', 0, 0);");
+        $res = mysqli_query($conn, "INSERT INTO location VALUES('$arrival_san', '', 0, 0);");
         if($res == false)
             return 0;
         

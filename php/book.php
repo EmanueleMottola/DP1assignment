@@ -18,11 +18,11 @@ if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on'){
         $_POST['arrival'] = strtoupper($_POST['arrival']);
         if(strcmp($_POST['departure'], $_POST['arrival']) >= 0 ){
             $_SESSION['book'] = 0;
-            $query = array(
+            /*$query = array(
                 'book' => "unsuccessful"
                 );
-            $query = http_build_query($query);
-            header("Location: ../front/view/user.php?$query");
+            $query = http_build_query($query);*/
+            header("Location: ../front/view/user.php?book=unsuccessful");
         }
 
         if(connect_db() == false)
@@ -45,20 +45,20 @@ if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on'){
 
         if($res){
             $_SESSION['book'] = 1;
-            $query = array(
+            /*$query = array(
                 'book' => "booked"
                 );
-            $query = http_build_query($query);
+            $query = http_build_query($query);*/
             close_db();
-            header('Location: https://'.$_SERVER['HTTP_HOST']."/assignment/front/view/user.php?$query");
+            header('Location: ../front/view/user.php?book=booked');
         }
         else{
-            $query = array(
+            /*$query = array(
                 'book' => "notbooked"
                 );
-            $query = http_build_query($query);
+            $query = http_build_query($query);*/
             close_db();
-            header('Location: https://'.$_SERVER['HTTP_HOST']."/assignment/front/view/user.php?$query");
+            header('Location: ../front/view/user.php?book=notbooked');
         }
         return;
         
