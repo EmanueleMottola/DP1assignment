@@ -78,7 +78,7 @@ getuserbooking($_SESSION['username']);
     </nav>
 
     <section id="first">
-        <h2>Bookings</h2>
+        <h2>Route</h2>
         <?php
             if( (!isset($_SESSION['book'])) || (isset($_SESSION['book']) && $_SESSION['book'] == 0 )){
         ?>
@@ -111,7 +111,7 @@ getuserbooking($_SESSION['username']);
         }
 
         if(isset($_SESSION['book']) && $_SESSION['book'] > 0){
-            echo "<table>
+            echo "<h2>Your book</h2><table>
                     <tr>
                         <th>Departure</th>
                         <th>Arrival</th>

@@ -24,6 +24,7 @@ section p{
 table{
     float: left;
     margin: 4%;
+    margin-top: 10px;
     border-collapse: collapse;
     width: 80%;
     color: black;
@@ -118,6 +119,7 @@ form input#num{
 .departure{
     float: left;
     min-width: 250px;
+    margin-left: 2%;
 }
 
 .arrival{
