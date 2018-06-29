@@ -14,6 +14,8 @@ if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on'){
     if(test_session() && isset($_SESSION['username'])){
         echo $_POST['departure'];
         echo $_POST['arrival'];
+        $_POST['departure'] = strtoupper($_POST['departure']);
+        $_POST['arrival'] = strtoupper($_POST['arrival']);
         if(strcmp($_POST['departure'], $_POST['arrival']) >= 0 ){
             $_SESSION['book'] = 0;
             $query = array(

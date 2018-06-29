@@ -25,8 +25,10 @@ if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on'){
             $_SESSION['book'] = 0;
             echo "Unbook successful";
         }
-        else
-            die("error unbooking");
+        else{
+            die("error unbooking"); //gestire bene l'errore
+        }
+            
 
         close_db();
         

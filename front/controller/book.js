@@ -1,6 +1,6 @@
 function validate_book(){
-    var dep = document.getElementById("dep").value;
-    var arr = document.getElementById("arr").value;
+    var dep = document.getElementById("dep").value.toUpperCase();
+    var arr = document.getElementById("arr").value.toUpperCase();
 
     console.log("dep: " + dep + "arr:" + arr)
 
